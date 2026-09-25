@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #00BCD4;
+    --color-secondary: #0097A7;
+    --color-dark: #1A1A1A;
+    --color-light: #F5F5F5;
+    --color-white: #FFFFFF;
+    --color-gray: #E0E0E0;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+/* ==================== SUBMENÚ (compartido: index + páginas de servicio) ==================== */
+.nav-item-submenu {
+    position: relative;
+}
+
+.chev {
+    font-size: 12px;
+    color: var(--color-primary);
+    transition: transform 0.25s ease;
+}
+
+.nav-item-submenu.abierto .chev {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+}
+
+@media (hover: hover) {
+    .nav-item-submenu:hover .submenu { display: block; }
+    .nav-item-submenu:hover .chev { transform: rotate(180deg); }
+}
+
+.nav-item-submenu.abierto .submenu {
+    display: block;
+}
+
+.submenu a {
+    display: block;
+    padding: 13px 24px 13px 34px;
+    font-size: 14.5px;
+    color: var(--color-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-gray);
+    transition: 0.2s ease;
+}
+
+.submenu li:last-child a {
+    border-bottom: none;
+}
+
+.submenu a:hover {
+    background-color: var(--color-light);
+    color: var(--color-secondary);
+}
+
+/* Versión dentro del menú hamburguesa (index) */
+.nav-mobile .submenu {
+    background: #fafafa;
+}
+
+.nav-mobile .submenu-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-dark);
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s ease;
+}
+
+.nav-mobile .submenu-toggle:hover {
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    padding-left: 32px;
+}
+
+/* ==================== HEADER DE PÁGINAS DE SERVICIO ==================== */
+.sv-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--color-gray);
+}
+
+.sv-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.sv-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 188, 212, 0.35);
+}
+
+.sv-nombre {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-dark);
+}
+
+.sv-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sv-nav .submenu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--color-white);
+    border: 1.5px solid var(--color-gray);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.sv-nav .submenu-toggle:hover {
+    border-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateY(-2px);
+}
+
+/* Dropdown en header (cae hacia abajo, alineado a la derecha) */
+.sv-nav .submenu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    min-width: 250px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: svDrop 0.25s ease;
+}
+
+@keyframes svDrop {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.sv-nav .submenu a {
+    padding: 12px 18px 12px 28px;
+}
+
+.submenu a.actual {
+    background: rgba(0, 188, 212, 0.08);
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.sv-btn-inicio {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    background: var(--color-dark);
+    color: var(--color-white);
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.sv-btn-inicio:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 188, 212, 0.35);
+}
+
+/* ==================== HERO (compacto) ==================== */
+.sv-hero {
+    position: relative;
+    padding: 50px 24px 45px;
+    text-align: center;
+    background: linear-gradient(180deg, #effafd 0%, var(--color-white) 100%);
+    overflow: hidden;
+}
+
+.sv-hero::before {
+    content: '';
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: rgba(0, 188, 212, 0.10);
+    top: -120px;
+    left: -100px;
+}
+
+.sv-hero::after {
+    content: '';
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 188, 212, 0.18);
+    bottom: -90px;
+    right: -70px;
+}
+
+.sv-num {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-secondary);
+    background: rgba(0, 188, 212, 0.12);
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.sv-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.sv-frase {
+    font-size: 18px;
+    color: #555;
+    max-width: 640px;
+    margin: 0 auto 22px;
+    position: relative;
+}
+
+.sv-hero-cta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    position: relative;
+}
+
+.sv-btn-primario {
+    display: inline-block;
+    padding: 14px 30px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 188, 212, 0.35);
+    transition: 0.25s ease;
+}
+
+.sv-btn-primario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(0, 188, 212, 0.45);
+}
+
+.sv-btn-ghost {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid var(--color-dark);
+    color: var(--color-dark);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.sv-btn-ghost:hover {
+    background: var(--color-dark);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+/* ==================== SECCIONES (compactas) ==================== */
+.sv-seccion {
+    padding: 36px 24px;
+}
+
+.sv-fondo-suave {
+    background: var(--color-light);
+}
+
+.sv-contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sv-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--color-dark);
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+}
+
+.sv-titulo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+}
+
+/* ¿Qué es? (texto + caja de ejemplos) */
+.sv-dos-col {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 26px;
+    align-items: start;
+}
+
+.sv-dos-col > p {
+    font-size: 16.5px;
+    color: #444;
+    line-height: 1.85;
+}
+
+.sv-caja-ejemplos {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-left: 4px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.sv-caja-ejemplos h3 {
+    font-size: 13.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+}
+
+.sv-caja-ejemplos ul {
+    list-style: none;
+}
+
+.sv-caja-ejemplos li {
+    padding: 6px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.sv-caja-ejemplos li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/* Ruta de trabajo (lo que incluye) */
+.sv-grid-incluye {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.sv-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 12px;
+    padding: 15px 16px;
+    transition: 0.25s ease;
+}
+
+.sv-item:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.15);
+}
+
+.sv-check {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(0, 188, 212, 0.12);
+    color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.sv-item span:last-child {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    padding-top: 2px;
+}
+
+/* Proceso */
+.sv-proceso {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.sv-paso {
+    text-align: center;
+    padding: 8px;
+}
+
+.sv-paso-num {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 2px solid var(--color-primary);
+    color: var(--color-secondary);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 188, 212, 0.25);
+}
+
+.sv-paso h3 {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.sv-paso p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Tecnologías */
+.sv-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sv-chip {
+    padding: 10px 22px;
+    background: var(--color-white);
+    border: 1.5px solid var(--color-gray);
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--color-dark);
+    transition: 0.25s ease;
+}
+
+.sv-chip:hover {
+    border-color: var(--color-primary);
+    color: var(--color-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 188, 212, 0.2);
+}
+
+/* FAQ */
+.sv-faq details {
+    background: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.sv-faq summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 22px;
+    font-weight: 600;
+    font-size: 15.5px;
+    cursor: pointer;
+}
+
+.sv-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.sv-faq summary::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-primary);
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.sv-faq details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.sv-faq details p {
+    padding: 0 22px 16px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+/* CTA final (compacto) */
+.sv-cta-final {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 44px 36px;
+    border-radius: 20px;
+    text-align: center;
+    color: var(--color-white);
+    background: linear-gradient(135deg, #07242c, #0d3440);
+    position: relative;
+    overflow: hidden;
+}
+
+.sv-cta-final::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0, 188, 212, 0.12);
+    top: -140px;
+    right: -100px;
+}
+
+.sv-cta-final h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.sv-cta-final p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.sv-cta-final .sv-btn-primario {
+    position: relative;
+}
+
+/* Footer */
+.sv-footer {
+    text-align: center;
+    padding: 26px 20px;
+    border-top: 2px solid var(--color-gray);
+    color: #666;
+    font-size: 14px;
+}
+
+.sv-footer a {
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sv-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== ANIMACIÓN AL HACER SCROLL ==================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 820px) {
+    .sv-hero h1 { font-size: 30px; }
+    .sv-seccion { padding: 28px 20px; }
+    .sv-dos-col { grid-template-columns: 1fr; }
+    .sv-grid-incluye { grid-template-columns: repeat(2, 1fr); }
+    .sv-proceso { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+    .sv-header { padding: 12px 16px; }
+    .sv-logo { width: 44px; height: 44px; }
+    .sv-nombre { font-size: 20px; }
+    .sv-nav { gap: 8px; }
+    .sv-nav .submenu-toggle { padding: 8px 13px; font-size: 13px; }
+    .sv-btn-inicio { padding: 8px 13px; font-size: 13px; }
+    .sv-hero { padding: 38px 16px 36px; }
+    .sv-hero h1 { font-size: 26px; }
+    .sv-frase { font-size: 16px; }
+    .sv-seccion { padding: 24px 16px; }
+    .sv-titulo { font-size: 23px; }
+    .sv-grid-incluye { grid-template-columns: 1fr; }
+    .sv-proceso { grid-template-columns: 1fr; }
+    .sv-cta-final { padding: 36px 22px; margin: 0 16px 40px; }
+    .sv-cta-final h2 { font-size: 24px; }
+}

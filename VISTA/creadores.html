@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creadores - Delpinware</title>
+    <!-- Reutilizamos el CSS de servicios (header, secciones, footer, animaciones) -->
+    <link rel="stylesheet" href="servicios.css">
+    <!-- Estilos propios de esta página -->
+    <link rel="stylesheet" href="creadores.css">
+</head>
+<body>
+
+    <!-- HEADER (igual al de las páginas de servicio) -->
+    <header class="sv-header">
+        <a href="../index.html" class="sv-logo-link" title="Ir al inicio">
+            <img src="logo-img/Logo de la empresa 1.png" alt="Logo Delpinware" class="sv-logo">
+            <span class="sv-nombre">Delpinware</span>
+        </a>
+        <nav class="sv-nav">
+            <div class="nav-item-submenu">
+                <button type="button" class="submenu-toggle">Servicios <span class="chev">▾</span></button>
+                <ul class="submenu">
+                    <li><a href="servicio-software.html">01 · Software Personalizado</a></li>
+                    <li><a href="servicio-apps.html">02 · Creación de Aplicaciones</a></li>
+                    <li><a href="servicio-web.html">03 · Sitios Web Interactivos</a></li>
+                    <li><a href="servicio-adaptados.html">04 · Programas Adaptados</a></li>
+                </ul>
+            </div>
+            <a href="../index.html" class="sv-btn-inicio">← Inicio</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- INTRO -->
+        <section class="sv-hero nn-hero-corto">
+            <p class="sv-num">LOS CEREBROS DETRÁS DEL DELFÍN</p>
+            <h1>Nuestros Creadores</h1>
+            <p class="sv-frase">Dos mentes, una misma idea: tecnología con propósito.</p>
+        </section>
+
+        <!-- ============ CREADOR 1: DELGADO (foto izq + info der) ============ -->
+        <section class="sv-seccion reveal">
+            <div class="sv-contenedor cr-fila">
+                <div class="cr-foto-lado">
+                    <div class="cr-foto-marco">
+                        <!-- 📷 IMAGEN: reemplaza este src por la foto de Delgado -->
+                        <!-- Ejemplo: <img src="logo-img/delgado.jpg" alt="Emanuel Delgado"> -->
+                        <img src="logo-img/delgado.png" alt="Emanuel Santiago Delgado Ardila" class="cr-foto">
+                    </div>
+                    <span class="cr-sello">Frontend</span>
+                </div>
+                <div class="cr-info">
+                    <p class="cr-num-creador">Creador 01</p>
+                    <h2 class="cr-nombre">Emanuel Santiago Delgado Ardila</h2>
+                    <p class="cr-cargo">Fundador · Desarrollador Frontend</p>
+                    <p class="cr-bio">El arquitecto de lo que se ve y se siente. Emanuel convierte ideas en interfaces: le da a Delpinware su cara visual, sus animaciones y esa experiencia fluida que hace que las páginas parezcan vivas. Si algo se ve bien en esta empresa, es culpa suya.</p>
+
+                    <!-- Barras de habilidades (se animan al aparecer en pantalla) -->
+                    <div class="cr-habilidades">
+                        <h3>Habilidades</h3>
+                        <div class="cr-habilidad">
+                            <span>HTML &amp; CSS</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 92%"></div></div>
+                        </div>
+                        <div class="cr-habilidad">
+                            <span>JavaScript</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 84%"></div></div>
+                        </div>
+                        <div class="cr-habilidad">
+                            <span>Diseño UI/UX</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 88%"></div></div>
+                        </div>
+                        <div class="cr-habilidad">
+                            <span>Creatividad</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 97%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CREADOR 2: PINILLA (info izq + foto der, espejo) ============ -->
+        <section class="sv-seccion sv-fondo-suave reveal">
+            <div class="sv-contenedor cr-fila cr-fila-invertida">
+                <div class="cr-foto-lado">
+                    <div class="cr-foto-marco">
+                        <!-- 📷 IMAGEN: reemplaza este src por la foto de Pinilla -->
+                        <!-- Ejemplo: <img src="logo-img/pinilla.jpg" alt="Samuel Pinilla"> -->
+                        <img src="logo-img/pinilla.png" alt="Samuel Pinilla Martin" class="cr-foto">
+                    </div>
+                    <span class="cr-sello">Backend</span>
+                </div>
+                <div class="cr-info">
+                    <p class="cr-num-creador">Creador 02</p>
+                    <h2 class="cr-nombre">Samuel Pinilla Martin</h2>
+                    <p class="cr-cargo">Fundador · Desarrollador Backend</p>
+                    <p class="cr-bio">El cerebro que nadie ve pero todos usan. Samuel construye la lógica, los datos y los sistemas que mantienen todo funcionando detrás de escena. Mientras Emanuel diseña el escenario, él monta la obra: bases de datos, servidores y esa lógica impecable que nunca falla (casi nunca).</p>
+
+                    <div class="cr-habilidades">
+                        <h3>Habilidades</h3>
+                        <div class="cr-habilidad">
+                            <span>Lógica &amp; Algoritmos</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 95%"></div></div>
+                        </div>
+                        <div class="cr-habilidad">
+                            <span>Python</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 86%"></div></div>
+                        </div>
+                        <div class="cr-habilidad">
+                            <span>Bases de datos SQL</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 88%"></div></div>
+                        </div>
+                        <div class="cr-habilidad">
+                            <span>Resolución de problemas</span>
+                            <div class="cr-barra"><div class="cr-barra-relleno" style="--nivel: 93%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ NUESTRA HISTORIA (relato en 3 capítulos, estilo HubSpot) ============ -->
+        <section class="sv-seccion reveal">
+            <div class="sv-contenedor">
+                <h2 class="sv-titulo">Nuestra historia</h2>
+
+                <!-- Capítulo 1 -->
+                <div class="cr-fila">
+                    <div class="cr-info">
+                        <p class="cr-capitulo">Capítulo 1</p>
+                        <h3 class="cr-subtitulo">El inicio</h3>
+                        <p>Todo empezó como empiezan los grandes proyectos: dos apasionados por la tecnología, un aula y la misma inquietud repetida de lado a lado. Delgado y Pinilla descubrieron que sus formas de pensar encajaban perfectas: mientras uno le daba vida a las pantallas, el otro le daba inteligencia a los sistemas.</p>
+                    </div>
+                    <div class="cr-foto-lado">
+                        <div class="cr-foto-marco cr-marco-suave">
+                            <!-- 📷 IMAGEN: pon aquí una foto del inicio (el aula, el cole, etc.) -->
+                            <img src="logo-img/hola.jpg" alt="El inicio de Delpinware" class="cr-foto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capítulo 2 (invertido) -->
+                <div class="cr-fila cr-fila-invertida">
+                    <div class="cr-info">
+                        <p class="cr-capitulo">Capítulo 2</p>
+                        <h3 class="cr-subtitulo">El nombre</h3>
+                        <p>Un apellido <strong>Del</strong>gado, otro <strong>Pin</strong>illa, y una chispa: <em>Delpin</em>. Sonaba a delfín —inteligente, ágil, de equipo— y así nació la identidad. Le sumaron <em>ware</em>, lo de software y hardware, y el nombre quedó completo: <strong>Delpinware</strong>. Un nombre que cuenta una sociedad y una misión al mismo tiempo.</p>
+                    </div>
+                    <div class="cr-foto-lado">
+                        <div class="cr-foto-marco cr-marco-suave">
+                            <!-- 📷 IMAGEN: pon aquí una imagen del nombre/logo en proceso -->
+                            <img src="logo-img/Logo de la empresa 1.png" alt="El nacimiento del nombre Delpinware" class="cr-foto cr-foto-logo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capítulo 3 -->
+                <div class="cr-fila">
+                    <div class="cr-info">
+                        <p class="cr-capitulo">Capítulo 3</p>
+                        <h3 class="cr-subtitulo">Hoy</h3>
+                        <p>El delfín tomó forma: circuitos azules y verdes que representan ideas fluyendo como datos dentro de un sistema. Hoy Delpinware diseña y desarrolla soluciones digitales con identidad propia, guiados por una idea simple que lo explica todo: <strong>"Pensamos digital, creamos lo esencial para una vida funcional."</strong></p>
+                    </div>
+                    <div class="cr-foto-lado">
+                        <div class="cr-foto-marco cr-marco-suave">
+                            <!-- 📷 IMAGEN: pon aquí una imagen actual (proyecto terminado, etc.) -->
+                            <img src="logo-img/images.jpeg" alt="Delpinware hoy" class="cr-foto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+               <!-- ============ VIDEO DE LA EMPRESA ============ -->
+        <section class="sv-seccion sv-fondo-suave reveal">
+            <div class="sv-contenedor">
+                <h2 class="sv-titulo">Delpinware en video</h2>
+
+                <!-- 🔗 PEGA TU VIDEO: reemplaza ID_DEL_VIDEO por el código de tu URL de YouTube.
+                     Ejemplo: si tu video es https://youtu.be/dQw4w9WgXcQ
+                     queda src="https://www.youtube.com/embed/dQw4w9WgXcQ" -->
+                <div class="cr-video">
+                    <iframe src="video de la empresa.mp4"
+                            title="Video de Delpinware"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="sv-cta-final reveal">
+            <h2>¿Quieres trabajar con nosotros?</h2>
+            <p>Conoce los servicios que Delgado y Pinilla construyeron para tu proyecto.</p>
+            <a href="servicio-software.html" class="sv-btn-primario">Ver nuestros servicios</a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="sv-footer">
+        <p>© 2025 Delpinware · Pensamos digital, creamos lo esencial · <a href="../index.html">Volver al inicio</a></p>
+    </footer>
+
+    <script src="servicios.js"></script>
+</body>
+</html>

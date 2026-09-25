@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse - Delpinware</title>
+    <link rel="stylesheet" href="formularios.css">
+</head>
+<body class="pagina-formulario">
+
+    <!-- ✏️ NUEVO: Botón flotante para volver a la página principal -->
+    <a href="../index.html" class="btn-inicio" title="Volver a la página principal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Inicio
+    </a>
+
+    <!-- Burbujas decorativas de fondo -->
+    <div class="burbujas" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+    </div>
+
+    <!-- Escenario 3D de la tarjeta -->
+    <div class="card-escenario">
+        <div class="tarjeta-3d" id="tarjeta3d">
+
+            <!-- ==================== CARA FRONTAL: REGISTRO ==================== -->
+            <div class="cara cara-frontal">
+                <img src="logo-img/Logo de la empresa 1.png" alt="Logo Delpinware" class="logo-form">
+                <h1 class="titulo-form">Crea tu cuenta</h1>
+                <p class="subtitulo-form">Únete a la comunidad de Delpinware</p>
+
+                <form id="formRegistro" novalidate>
+                    <!-- Nombre -->
+                    <div class="input-grupo" id="grupoNombre">
+                        <span class="icono-input">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </span>
+                        <input type="text" id="regNombre" placeholder="Nombre completo" autocomplete="name">
+                    </div>
+                    <p class="msg-error" id="errorNombre"></p>
+                    <!-- ✏️ CORREGIDO: Teléfono y Fecha sin icono interno para que haya espacio de sobra -->
+                    <div class="fila-doble">
+                        <div>
+                            <span class="mini-label">Teléfono</span>
+                            <div class="input-grupo input-sin-icono" id="grupoTel">
+                                <input type="tel" id="regTel" placeholder="Ej. 555-123-4567" autocomplete="tel">
+                            </div>
+                            <p class="msg-error" id="errorTel"></p>
+                        </div>
+                        <div>
+                            <span class="mini-label">Fecha de nacimiento</span>
+                            <div class="input-grupo input-sin-icono" id="grupoFecha">
+                                <input type="date" id="regFecha" autocomplete="bday">
+                            </div>
+                            <p class="msg-error" id="errorFecha"></p>
+                        </div>
+                    </div>
+
+                    <!-- Correo -->
+                    <div class="input-grupo" id="grupoEmail">
+                        <span class="icono-input">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                        </span>
+                        <input type="email" id="regEmail" placeholder="Correo electrónico" autocomplete="email">
+                    </div>
+                    <p class="msg-error" id="errorEmail"></p>
+
+                    <!-- Contraseña -->
+                    <div class="input-grupo" id="grupoPass">
+                        <span class="icono-input">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </span>
+                        <input type="password" id="regPass" placeholder="Contraseña" autocomplete="new-password">
+                        <button type="button" class="btn-ojo" aria-label="Mostrar contraseña">
+                            <svg class="icono-ojo-abierto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="icono-ojo-cerrado" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/></svg>
+                        </button>
+                    </div>
+                    <p class="msg-error" id="errorPass"></p>
+
+                    <!-- Barra de fuerza en vivo -->
+                    <div class="fuerza-wrap" id="fuerzaWrap" hidden>
+                        <div class="fuerza-barra"><div class="fuerza-relleno" id="fuerzaRelleno"></div></div>
+                        <p class="fuerza-texto" id="fuerzaTexto"></p>
+                    </div>
+
+                    <!-- Checklist de requisitos -->
+                    <ul class="checklist" id="checklist">
+                        <li data-req="largo">Mínimo 8 caracteres</li>
+                        <li data-req="mayus">Una mayúscula</li>
+                        <li data-req="numero">Un número</li>
+                        <li data-req="simbolo">Un símbolo (!@#...)</li>
+                    </ul>
+
+                    <!-- Confirmar contraseña -->
+                    <div class="input-grupo" id="grupoPass2">
+                        <span class="icono-input">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </span>
+                        <input type="password" id="regPass2" placeholder="Confirmar contraseña" autocomplete="new-password">
+                        <button type="button" class="btn-ojo" aria-label="Mostrar contraseña">
+                            <svg class="icono-ojo-abierto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="icono-ojo-cerrado" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/></svg>
+                        </button>
+                    </div>
+                    <p class="msg-error" id="errorPass2"></p>
+
+                    <!-- ✏️ NUEVO: Aceptación de términos -->
+                    <label class="terminos" for="regTerminos" id="grupoTerminos">
+                        <input type="checkbox" id="regTerminos">
+                        <span>Acepto los <a href="#" class="link-terminos">términos y condiciones</a> y la política de privacidad de Delpinware</span>
+                    </label>
+                    <p class="msg-error" id="errorTerminos"></p>
+
+                    <button type="submit" class="btn-enviar" id="btnRegistro">
+                        <span class="btn-texto">Crear Cuenta</span>
+                        <span class="spinner" hidden></span>
+                    </button>
+                </form>
+
+                <p class="cambiar-form">
+                    ¿Ya tienes cuenta?
+                    <a href="#" class="flip-link">Inicia sesión</a>
+                </p>
+            </div>
+
+            <!-- ==================== CARA TRASERA (✏️ con tiempo y salida al inicio) ==================== -->
+            <div class="cara cara-trasera">
+                <img src="logo-img/Logo de la empresa 1.png" alt="Logo Delpinware" class="logo-form">
+                <h1 class="titulo-form">¿Ya eres parte?</h1>
+                <p class="subtitulo-form">Inicia sesión y sigue donde te quedaste.</p>
+                <a href="iniciar-sesion.html" class="btn-enviar enlace-boton">Iniciar Sesión</a>
+                <a href="#" class="flip-back">← Volver al registro</a>
+              
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="formularios.js"></script>
+</body>
+</html>
