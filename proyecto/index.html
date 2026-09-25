@@ -1,0 +1,720 @@
+queda asi ell html <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyon Technologies | Tu Tienda de Electrodomésticos y Tecnología</title>
+
+    <link rel="stylesheet" href="Vista/css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Tipografía premium: SOLO ESTE LINK carga las letras -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO FIJO: barra promocional + navegación -->
+    <div class="top-header">
+
+        <!-- BARRA PROMOCIONAL -->
+        <div class="announce-bar">
+            <i class="fas fa-truck-fast"></i>
+            Envío GRATIS en compras superiores a $2.000.000 · Garantía oficial en todos los productos
+        </div>
+
+        <!-- BARRA DE NAVEGACIÓN -->
+        <header class="navbar">
+            <div class="nav-container">
+
+                <!-- LOGO -->
+                <a href="#inicio" class="logo-link">
+                    <img 
+                        src="Vista/logo de empresa/logo.lyon-technologies.jpg" 
+                        alt="Lyon Technologies" 
+                        class="brand-logo"
+                    >
+                    <span class="brand-name">
+                        LYON <em>TECHNOLOGIES</em>
+                    </span>
+                </a>
+
+                <!-- MENÚ -->
+                <nav class="nav-menu">
+                    <a href="#inicio" class="nav-item">Inicio</a>
+                    <a href="#categorias" class="nav-item">Categorías</a>
+                    <a href="#catalogo" class="nav-item">Catálogo</a>
+                    <a href="#contacto" class="nav-item">Contáctanos</a>
+                </nav>
+
+                <!-- ACCIONES -->
+                <div class="nav-actions">
+                    <a href="sistema.html" class="btn btn-secondary">
+                        Iniciar Sesión
+                    </a>
+
+                    <a href="sistema.html?action=register" class="btn btn-primary">
+                        Registrarse
+                    </a>
+                </div>
+
+            </div>
+        </header>
+
+    </div>
+
+
+    <!-- HERO -->
+    <section id="inicio" class="hero-section">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                Tu Hogar Merece lo Mejor
+            </span>
+
+            <h1 class="hero-title">
+                Electrodomésticos y 
+                <span>Tecnología Premium</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Computadores, televisores, línea blanca y accesorios con garantía oficial,
+                entrega inmediata y los mejores precios de Bogotá.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#catalogo" class="btn btn-primary btn-large">
+                    Ver Catálogo 
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#contacto" class="btn btn-outline btn-large">
+                    Contáctanos
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <span>
+                    <i class="fas fa-shield-halved"></i>
+                    Garantía oficial
+                </span>
+
+                <span>
+                    <i class="fas fa-truck-fast"></i>
+                    Entrega inmediata
+                </span>
+
+                <span>
+                    <i class="fas fa-face-smile"></i>
+                    +1500 clientes felices
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="hero-glow"></div>
+
+    </section>
+
+
+    <!-- CATEGORÍAS -->
+    <section id="categorias" class="servicios-section">
+
+        <div class="container">
+
+            <h2 class="section-title center">
+                Nuestras Categorías
+            </h2>
+
+            <p class="section-subtitle center">
+                Todo lo que tu hogar y tu setup necesitan, en un solo lugar.
+            </p>
+
+            <div class="servicios-grid">
+
+                <!-- TECNOLOGÍA -->
+                <div class="servicio-card">
+
+                    <div class="servicio-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+
+                    <h3>
+                        Tecnología & Gaming
+                    </h3>
+
+                    <p>
+                        Tarjetas gráficas, procesadores, memorias y componentes
+                        para armar tu PC soñada.
+                    </p>
+
+                </div>
+
+
+                <!-- AUDIO Y VIDEO -->
+                <div class="servicio-card">
+
+                    <div class="servicio-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+
+                    <h3>
+                        Audio & Video
+                    </h3>
+
+                    <p>
+                        Televisores 4K, barras de sonido y todo para tu cine en casa.
+                    </p>
+
+                </div>
+
+
+                <!-- HOGAR -->
+                <div class="servicio-card">
+
+                    <div class="servicio-icon">
+                        <i class="fas fa-house"></i>
+                    </div>
+
+                    <h3>
+                        Hogar & Línea Blanca
+                    </h3>
+
+                    <p>
+                        Neveras, lavadoras, aires acondicionados y microondas
+                        con eficiencia inteligente.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="productos-section">
+
+        <div class="container">
+
+            <h2 class="section-title center">
+                Catálogo Lyon
+            </h2>
+
+            <p class="section-subtitle center">
+                Productos disponibles en inventario, listos para entrega.
+            </p>
+
+
+            <div class="catalogo-grid">
+
+                <!-- PRODUCTO 1 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-microchip media-fallback"></i>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=800&q=80"
+                            alt="GPU X200"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            GPU X200
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Tarjeta gráfica 8GB GDDR6 · Ray Tracing
+                        </p>
+
+                        <div class="catalogo-price">
+                            $1.200.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            5 unidades
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 2 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-brain media-fallback"></i>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                            alt="Intel i7 13700"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Intel i7 13700
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Procesador de 12 núcleos híbridos
+                        </p>
+
+                        <div class="catalogo-price">
+                            $850.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            3 unidades
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 3 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-memory media-fallback"></i>
+
+                        <img
+                            src="Vista/img/productos/ram-ddr4.jpg"
+                            alt="Kit RAM 16GB DDR4"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Kit RAM 16GB DDR4
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            2x8GB alta frecuencia · Disipación
+                        </p>
+
+                        <div class="catalogo-price">
+                            $220.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 4 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-tv media-fallback"></i>
+
+                        <img
+                            src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80"
+                            alt="Televisor LG 55"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Televisor LG 55" 4K
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Smart TV Ultra HD · HDR10
+                        </p>
+
+                        <div class="catalogo-price">
+                            $3.200.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 5 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-volume-up media-fallback"></i>
+
+                        <img
+                            src="Vista/img/productos/barra-sony.jpg"
+                            alt="Barra de sonido Sony"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Barra Sony 2.1
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Barra de sonido con subwoofer
+                        </p>
+
+                        <div class="catalogo-price">
+                            $650.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 6 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-snowflake media-fallback"></i>
+
+                        <img
+                            src="Vista/img/productos/nevera-lg.jpg"
+                            alt="Nevera LG 300L"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Nevera LG 300L
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Inverter · Ahorro energético
+                        </p>
+
+                        <div class="catalogo-price">
+                            $2.500.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 7 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-water media-fallback"></i>
+
+                        <img
+                            src="Vista/img/productos/lavadora-samsung.jpg"
+                            alt="Lavadora Samsung 18kg"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Lavadora Samsung 18kg
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Automática · Carga frontal
+                        </p>
+
+                        <div class="catalogo-price">
+                            $1.900.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 8 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-fan media-fallback"></i>
+
+                        <img
+                            src="Vista/img/productos/aire-whirlpool.jpg"
+                            alt="Aire Acondicionado Whirlpool"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            A/A Whirlpool
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Aire acondicionado Inverter
+                        </p>
+
+                        <div class="catalogo-price">
+                            $1.800.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCTO 9 -->
+                <div class="catalogo-card">
+
+                    <div class="catalogo-media">
+
+                        <i class="fas fa-fire media-fallback"></i>
+
+                        <img
+                            src="Vista/img/productos/microondas-challenger.jpg"
+                            alt="Microondas Challenger"
+                            loading="lazy"
+                            onerror="this.style.display='none'"
+                        >
+
+                    </div>
+
+                    <div class="catalogo-body">
+
+                        <h3 class="catalogo-name">
+                            Microondas Challenger
+                        </h3>
+
+                        <p class="catalogo-desc">
+                            Capacidad familiar · Digital
+                        </p>
+
+                        <div class="catalogo-price">
+                            $480.000
+                        </div>
+
+                        <span class="catalogo-stock">
+                            <i class="fas fa-box"></i>
+                            En stock
+                        </span>
+
+                        <a href="sistema.html" class="btn btn-primary">
+                            Comprar
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="servicios-section">
+
+        <div class="container">
+
+            <h2 class="section-title center">
+                Contáctanos
+            </h2>
+
+            <p class="section-subtitle center">
+                Estamos listos para asesorarte en tu próxima compra.
+            </p>
+
+            <div class="contacto-grid">
+
+                <!-- DIRECCIÓN -->
+                <div class="contacto-card">
+
+                    <i class="fas fa-location-dot"></i>
+
+                    <h4>
+                        Visítanos
+                    </h4>
+
+                    <p>
+                        Calle 123 #45-67<br>
+                        Bogotá D.C.
+                    </p>
+
+                </div>
+
+
+                <!-- CORREO -->
+                <div class="contacto-card">
+
+                    <i class="fas fa-envelope"></i>
+
+                    <h4>
+                        Escríbenos
+                    </h4>
+
+                    <p>
+                        info@lyontechnologies.com
+                    </p>
+
+                </div>
+
+
+                <!-- HORARIO -->
+                <div class="contacto-card">
+
+                    <i class="fas fa-clock"></i>
+
+                    <h4>
+                        Horario
+                    </h4>
+
+                    <p>
+                        Lun – Sáb<br>
+                        8:00 a.m. – 7:00 p.m.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="container footer-content">
+
+            <p>
+                &copy; 2026 Lyon Technologies. Todos los derechos reservados.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Privacidad
+                </a>
+
+                <a href="#">
+                    Términos de Servicio
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
+ o no

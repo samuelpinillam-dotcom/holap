@@ -1,0 +1,262 @@
+/* ============================================================
+   Lyon Technologies · estilo.css — TEMA LEÓN v2 FINAL
+   Requiere en sistema.html:
+   1) <html lang="es" data-bs-theme="dark">
+   2) Link de Google Fonts (Space Grotesk + Inter)
+   ============================================================ */
+:root {
+  --bg: #08090c;  --surface: #11141a;  --card: #181d26;
+  --border: rgba(255,255,255,.08);
+  --cyan: #00f2fe;  --cyan-soft: rgba(0,242,254,.12);  --cyan-glow: rgba(0,242,254,.35);
+  --orange: #ff7a00; --orange-strong: #ff9d38;
+  --orange-soft: rgba(255,122,0,.14);  --orange-glow: rgba(255,122,0,.4);
+  --text: #f1f5f9;  --text-2: #94a3b8;  --radius: 12px;
+}
+
+/* ---------- BASE + TIPOGRAFÍA ---------- */
+html, body {
+  background:
+    radial-gradient(1100px 500px at 85% -10%, var(--cyan-soft), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, var(--orange-soft), transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.02rem;
+  min-height: 100vh;
+}
+/* Lo que firma la marca usa Space Grotesk */
+h3, h4, h5, h6, .card h5, .btn, #dashWelcome, .navbar .navbar-brand span {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+.text-muted { color: #aeb9c8 !important; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #262e3a; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+
+/* ---------- NAVBAR + LOGO PROTAGONISTA ---------- */
+.navbar {
+  min-height: 68px;
+  background: rgba(8,9,12,.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 6px 30px rgba(0,0,0,.5);
+}
+.navbar .navbar-brand { text-decoration: none; }
+.logoCircle {
+  width: 58px; height: 58px; border-radius: 50%;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    conic-gradient(from 220deg, var(--orange), var(--cyan), var(--orange)) border-box;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  animation: lionPulse 3s ease-in-out infinite;
+}
+.logoImg { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+@keyframes lionPulse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(255,255,255,.15),
+             0 0 28px var(--orange-glow), 0 0 55px var(--cyan-glow); }
+  50%      { box-shadow: 0 0 0 1px rgba(255,255,255,.25),
+             0 0 44px var(--cyan-glow), 0 0 80px var(--orange-glow); }
+}
+.navbar .navbar-brand span {
+  font-size: 1.35rem !important;   /* vence al estilo inline */
+  letter-spacing: .5px;
+  text-shadow: 0 0 18px var(--cyan-glow), 0 0 36px var(--orange-glow);
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+#homeView {
+  position: relative; overflow: hidden;
+  background: linear-gradient(165deg, var(--card) 10%, var(--surface) 90%);
+  box-shadow: 0 0 46px rgba(0,242,254,.07), 0 25px 60px rgba(0,0,0,.6);
+}
+#homeView::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--cyan));
+}
+.card h5 { font-size: 1.35rem; }
+h3#dashWelcome { font-size: 1.9rem; }
+#dashWelcome {
+  background: linear-gradient(90deg, var(--cyan), var(--orange-strong));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- BOTONES ---------- */
+.btn { font-size: 1rem; }
+.btn-sm { font-size: .95rem; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--orange-strong));
+  border: none; color: #fff;
+  box-shadow: 0 4px 20px var(--orange-glow);
+}
+.btn-primary:hover, .btn-primary:focus {
+  filter: brightness(1.12); color: #fff;
+  box-shadow: 0 8px 30px var(--orange-glow); transform: translateY(-1px);
+}
+.btn-primary:disabled { filter: grayscale(.5) brightness(.8); transform: none; }
+.btn-outline-primary { color: var(--cyan); border-color: rgba(0,242,254,.45); background: transparent; }
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  color: #031b1e; background: var(--cyan); border-color: var(--cyan);
+  box-shadow: 0 4px 18px var(--cyan-glow);
+}
+.btn-outline-secondary { color: var(--text-2); border-color: rgba(255,255,255,.22); }
+.btn-outline-secondary:hover { color: var(--text); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.4); }
+.btn-outline-warning { color: var(--orange-strong); border-color: rgba(255,157,56,.5); }
+.btn-outline-warning:hover { color: #1a0d00; background: var(--orange-strong); border-color: var(--orange-strong); }
+.btn-outline-danger { color: #ff7a7a; border-color: rgba(255,122,122,.45); }
+.btn-outline-danger:hover { color: #fff; background: #c92a2a; border-color: #c92a2a; }
+
+/* ---------- FORMULARIOS ---------- */
+.form-control, .form-select { background: #0e1218; color: var(--text); border: 1px solid #262e3a; }
+.form-control::placeholder { color: #5b6779; }
+.form-control:focus, .form-select:focus {
+  background: #0e1218; color: var(--text);
+  border-color: var(--cyan); box-shadow: 0 0 0 .22rem var(--cyan-soft);
+}
+.form-select option { background: var(--surface); color: var(--text); }
+.form-label { color: var(--text-2); font-size: .88rem; }
+.form-check-input { background-color: #0e1218; border-color: #262e3a; }
+.form-check-input:checked { background-color: var(--cyan); border-color: var(--cyan); }
+
+/* ---------- TABLAS ---------- */
+.table {
+  --bs-table-bg: transparent;  --bs-table-color: var(--text);
+  --bs-table-border-color: var(--border);
+  --bs-table-hover-bg: rgba(0,242,254,.05);  --bs-table-hover-color: #fff;
+  color: var(--text);
+}
+.table th {
+  color: var(--cyan); font-size: .82rem; letter-spacing: 1px;
+  text-transform: uppercase; white-space: nowrap;
+  padding: .8rem .75rem;
+  border-color: rgba(0,242,254,.2) !important;
+}
+.table td { color: var(--text); border-color: var(--border) !important; vertical-align: middle; padding: .85rem .75rem; }
+.table small, .table .small { font-size: .92rem !important; }
+
+/* ---------- MÓDULOS (sidebar) ---------- */
+.list-group-item {
+  background: transparent; color: var(--text-2);
+  font-size: 1.06rem;
+  border-color: var(--border); cursor: pointer;
+  transition: all .22s ease;
+  padding: .9rem 1.1rem;
+}
+.list-group-item-action:hover { background: var(--cyan-soft); color: var(--cyan); }
+.list-group-item-action:focus {
+  background: linear-gradient(90deg, var(--orange-soft), transparent 80%);
+  color: var(--orange-strong); outline: none;
+}
+
+/* ---------- BADGES NEÓN ---------- */
+.badge { font-weight: 600; }
+.badge-estado-activo, .badge-estado-activa { background: rgba(16,185,129,.14); color: #34d399; border: 1px solid rgba(16,185,129,.35); }
+.badge-estado-inactivo { background: rgba(148,163,184,.12); color: #94a3b8; border: 1px solid rgba(148,163,184,.3); }
+.badge-estado-pendiente { background: var(--orange-soft); color: var(--orange-strong); border: 1px solid rgba(255,157,56,.35); }
+.badge-estado-enviada { background: rgba(0,242,254,.1); color: var(--cyan); border: 1px solid rgba(0,242,254,.35); }
+.badge-estado-descuento { background: rgba(255,122,0,.16); color: var(--orange-strong); border: 1px solid rgba(255,122,0,.4); }
+
+/* ---------- KPIs DEL RESUMEN (colores del logo) ---------- */
+.col-md-3 .card small,
+.col-md-3 .card small.text-muted {
+  color: var(--cyan) !important;
+  font-size: 1rem; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.col-md-3 .card strong {
+  font-size: 1.8rem; display: inline-block;
+  background: linear-gradient(90deg, var(--orange-strong), var(--cyan));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- TIENDA (clientes) ---------- */
+.card-producto {
+  border: 1px solid var(--border); border-top: 2px solid var(--orange);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.card-producto:hover {
+  transform: translateY(-6px); border-color: rgba(0,242,254,.35);
+  box-shadow: 0 14px 34px rgba(0,0,0,.55), 0 0 26px var(--cyan-soft);
+}
+.desc-producto { min-height: 44px; }
+
+/* ---------- ACTIVIDAD ---------- */
+#activityCard h6 { font-size: 1.1rem; }
+#activityList, #activityList small { color: #c3cdd9 !important; font-size: 1rem !important; }
+
+/* ---------- COHESIÓN Y VARIOS ---------- */
+#contentArea .card { border-left: 3px solid var(--orange); }
+.card + .card { margin-top: .75rem; }
+.card h5, .card h6, .card p, .card strong, .card label { color: var(--text); }
+.spinner-border { color: var(--cyan); }
+.site-footer { color: var(--text-2); border-top: 1px solid var(--border); }
+a { color: var(--cyan); }
+
+@media (max-width: 767px) {
+  main.container { padding-left: 12px; padding-right: 12px; }
+}
+/* ============================================================
+   NAVBAR PREMIUM + LOGIN LEGIBLE (misma firma que la landing)
+   ============================================================ */
+
+/* Píldora de marca con hover glow */
+.navbar-brand {
+    padding: 6px 20px 6px 8px !important;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.04);
+    transition: all .4s ease;
+}
+.navbar-brand:hover {
+    border-color: rgba(0,242,254,.5);
+    background: rgba(0,242,254,.06);
+    box-shadow: 0 0 34px rgba(0,242,254,.2);
+}
+
+/* Logo MÁS grande */
+.logoCircle { width: 64px; height: 64px; }
+
+/* Nombre bicolor: LYON blanco + TECHNOLOGIES naranja */
+.brand-text {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-size: 1.4rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 0 22px var(--cyan-glow);
+    white-space: nowrap;
+}
+.brand-text em {
+    font-style: normal;
+    color: var(--orange-strong);
+    text-shadow: 0 0 22px var(--orange-glow);
+}
+
+/* Título del login con degradado león */
+#homeView h4 {
+    font-size: 1.6rem; font-weight: 700;
+    background: linear-gradient(90deg, var(--orange-strong), var(--cyan));
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Etiquetas de los campos: claras y grandes */
+.form-label {
+    color: #c9d3e2 !important;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .4rem;
+}
+
+/* Pestaña "Registrarse" más visible */
+#btnTabRegister { font-weight: 600; }
+
+/* Campos de entrada un poco más cómodos */
+.form-control, .form-select { padding: .7rem .9rem; font-size: 1.02rem; }
